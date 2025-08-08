@@ -6,6 +6,10 @@
   font-family: "Honoka Mincho";
   src: url("../fonts/Honoka_Shin_Mincho_L.woff2") format("woff2"), url("../fonts/Honoka_Shin_Mincho_L.woff") format("woff");
 }
+body {
+  font-family: "Noto Serif JP", serif;
+}
+
 .section {
   padding-top: 180px;
   padding-bottom: 100px;
@@ -81,10 +85,11 @@
 .header__logo {
   width: 150px;
   height: 58px;
+  position: absolute;
+  left: 6%;
 }
 @media screen and (max-width: 768px) {
   .header__logo {
-    margin-left: 15px;
     width: 130px;
     height: 45px;
   }
@@ -93,7 +98,6 @@
   .header__logo {
     width: 102px;
     height: 40px;
-    margin-left: 15px;
   }
 }
 
@@ -130,7 +134,7 @@
   text-decoration-line: underline;
   text-decoration-style: solid;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   text-decoration-thickness: auto;
   text-underline-offset: auto;
 }
@@ -225,6 +229,57 @@
     letter-spacing: 5.4px;
     top: 73%;
   }
+}
+
+.header__lead {
+  position: absolute;
+  top: 61%;
+  right: 3%;
+  color: #FFF;
+  font-family: "EB Garamond";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 3.6px;
+}
+@media screen and (max-width: 768px) {
+  .header__lead {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__lead {
+    right: 0%;
+    font-size: 8px;
+  }
+}
+.header__lead::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 154.003px;
+  background-color: #fff;
+  margin-top: 33px;
+  margin-left: 39px;
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .header__lead::after {
+    height: 75px;
+    margin-left: 35px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__lead::after {
+    height: 50px;
+    margin-left: 31px;
+  }
+}
+
+.header__lead-text {
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 /*------------------
@@ -442,7 +497,7 @@
   top: 9%;
   right: 5%;
   -webkit-animation: upDownMove 3s ease-in-out infinite alternate;
-          animation: upDownMove 3s ease-in-out infinite alternate;
+  animation: upDownMove 3s ease-in-out infinite alternate;
 }
 @media screen and (max-width: 768px) {
   .reserve__img {
@@ -469,7 +524,6 @@
     /* 30pxだけ下へ移動（好きな値に調整可能） */
   }
 }
-
 @keyframes upDownMove {
   0% {
     -webkit-transform: translateY(0);

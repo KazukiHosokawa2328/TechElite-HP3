@@ -22,6 +22,10 @@ $breakpoints: (
     url("../fonts/Honoka_Shin_Mincho_L.woff") format("woff");
 }
 
+body {
+  font-family: "Noto Serif JP", serif;;
+}
+
 .section {
   padding-top: 180px;
   padding-bottom: 100px;
@@ -87,9 +91,10 @@ $breakpoints: (
 .header__logo {
   width: 150px;
   height: 58px;
+  position: absolute;
+  left: 6%;
 
   @include mq(mid) {
-    margin-left: 15px;
     width: 130px;
     height: 45px;
   }
@@ -97,7 +102,6 @@ $breakpoints: (
   @include mq(sp) {
     width: 102px;
     height: 40px;
-    margin-left: 15px;
   }
 }
 
@@ -126,9 +130,12 @@ $breakpoints: (
   letter-spacing: 5.4px;
 
   &:hover {
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    -webkit-text-decoration-skip-ink: none;
+            text-decoration-skip-ink: none;
     text-decoration-thickness: auto;
     text-underline-offset: auto;
   }
@@ -215,6 +222,55 @@ $breakpoints: (
     letter-spacing: 5.4px;
     top: 73%;
   }
+}
+
+
+
+.header__lead {
+    position: absolute;
+    top: 61%;
+    right: 3%;
+    color: #FFF;
+    font-family: "EB Garamond";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 3.6px;
+
+    @include mq(mid) {
+        font-size: 10px;
+      }
+    
+    @include mq(sp) {
+      right: 0%;
+      font-size: 8px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 154.003px;
+      background-color: #fff;
+      margin-top: 33px;
+        margin-left: 39px;
+
+        @include mq(tab) {
+            height: 75px;
+            margin-left: 35px;
+          }
+        
+          @include mq(sp) {
+            height: 50px;
+            margin-left: 31px;
+    }
+}
+}
+
+.header__lead-text {
+  display: inline-block;
+  transform: rotate(90deg);
 }
 
 /*------------------
@@ -410,7 +466,8 @@ $breakpoints: (
   height: 128px;
   top: 9%;
   right: 5%;
-  animation: upDownMove 3s ease-in-out infinite alternate;
+  -webkit-animation: upDownMove 3s ease-in-out infinite alternate;
+          animation: upDownMove 3s ease-in-out infinite alternate;
 
   @include mq(mid) {
     width: 130px;
@@ -421,6 +478,16 @@ $breakpoints: (
     width: 112.969px;
     height: 60px;
     top: 2%;
+  }
+}
+
+@-webkit-keyframes upDownMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+    /* 30pxだけ下へ移動（好きな値に調整可能） */
   }
 }
 
