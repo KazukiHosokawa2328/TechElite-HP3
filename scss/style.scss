@@ -91,8 +91,6 @@ body {
 .header__logo {
   width: 150px;
   height: 58px;
-  position: absolute;
-  left: 6%;
 
   @include mq(mid) {
     width: 130px;
@@ -155,18 +153,24 @@ body {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+.header__bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30%;
+}
+
 .header__text {
-  position: absolute;
   color: #fff;
   font-family: "Honoka Mincho";
   font-size: 34px;
   font-weight: 400;
   letter-spacing: 10.2px;
-  top: 72%;
-  left: 6%;
 
   @include mq(tab) {
-    top: 60%;
     font-size: 28px;
   }
 
@@ -175,7 +179,6 @@ body {
     font-weight: 400;
     line-height: 36px;
     letter-spacing: 7.2px;
-    top: 50%;
   }
 
   @include mq(sp) {
@@ -183,7 +186,6 @@ body {
     font-weight: 400;
     line-height: 36px;
     letter-spacing: 7.2px;
-    top: 50%;
   }
 }
 
@@ -199,18 +201,14 @@ body {
 }
 
 .header__desc {
-  position: absolute;
   color: #fff;
   font-family: "Honoka Mincho";
   font-size: 24px;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 7.2px;
-  top: 80%;
-  left: 6%;
 
   @include mq(tab) {
-    top: 70%;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 5.4px;
@@ -220,16 +218,10 @@ body {
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 5.4px;
-    top: 73%;
   }
 }
 
-
-
 .header__lead {
-    position: absolute;
-    top: 61%;
-    right: 3%;
     color: #FFF;
     font-family: "EB Garamond";
     font-size: 12px;
@@ -243,8 +235,7 @@ body {
       }
     
     @include mq(sp) {
-      right: 0%;
-      font-size: 8px;
+        display: none;
     }
 
     &::after {
@@ -255,6 +246,11 @@ body {
       background-color: #fff;
       margin-top: 33px;
         margin-left: 39px;
+
+        @include mq(tab) {
+            height: 75px;
+            margin-left: 39px;
+          }
 
         @include mq(tab) {
             height: 75px;
